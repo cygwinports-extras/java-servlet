@@ -1,0 +1,14 @@
+ORIG_PN="apache-tomcat"
+inherit ant
+
+
+HOMEPAGE="http://tomcat.apache.org/"
+SRC_URI="mirror://apache/tomcat/tomcat-${PV[1]}/v${PV}/src/${ORIG_PN}-${PV}-src.tar.gz
+         mirror://portage/dev-java/tomcat-servlet-api/files/2.5-build.xml"
+SRC_DIR="${ORIG_PN}-${PV}-src"
+
+DISTCLEANFILES="*/*/build.xml"
+
+ANT_BUILD_XML="2.5-build.xml"
+ANT_BUILD_TARGETS="jar javadoc"
+ANT_INSTALL_JARS="output/build/lib/*.jar"
